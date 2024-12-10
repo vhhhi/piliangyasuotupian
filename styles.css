@@ -1,0 +1,449 @@
+/* 全局样式 */
+:root {
+    --primary-color: #7A8C7B;
+    --background-color: #F5F6F2;
+    --text-color: #4A4F41;
+    --border-radius: 12px;
+    --success-color: #8BA888;
+    --hover-color: #6B7A6C;
+    --button-text: #F5F6F2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #6e6e73;
+}
+
+/* 上传区域样式 */
+.upload-area {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.upload-area:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.upload-box {
+    border: 2px dashed #A5AFA6;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+}
+
+.upload-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    filter: invert(55%) sepia(12%) saturate(346%) hue-rotate(67deg) brightness(95%) contrast(86%);
+}
+
+.sub-text {
+    color: #6e6e73;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* 预览区域样式 */
+.preview-container {
+    margin-top: 2rem;
+}
+
+.preview-box {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.preview-item {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.preview-item h3 {
+    margin-bottom: 1rem;
+}
+
+.image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background: #f5f5f7;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.file-info {
+    margin-top: 1rem;
+    color: #6e6e73;
+}
+
+/* 控制区域样式 */
+.controls {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.quality-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="range"] {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 4px;
+    background: #E6E9E3;
+    border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #A5B5A6;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #96A697;
+}
+
+.download-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #A5B5A6;
+    color: #FFFFFF;
+    border: 1px solid #96A697;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #96A697;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(150, 166, 151, 0.3);
+}
+
+/* 批量预览列表样式 */
+.batch-preview-list {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.batch-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #F0F2ED;
+    border-radius: 4px;
+    border: 1px solid #E6E9E3;
+}
+
+.batch-controls > div:last-child {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.image-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.image-item {
+    position: relative;
+    padding: 0.5rem;
+    border: 1px solid #D8DCD4;
+    border-radius: 4px;
+    background: #FFFFFF;
+}
+
+.image-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.image-item .item-info {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.item-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #E6E9E3;
+}
+
+.status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    background: #E6E9E3;
+    color: #4A4F41;
+    border: 1px solid #D1D5CE;
+}
+
+.status.compressed {
+    background: #A5B5A6;
+    color: #FFFFFF;
+    border: 1px solid #96A697;
+}
+
+.primary-btn {
+    padding: 0.5rem 1rem;
+    background: #A5B5A6;
+    color: #FFFFFF;
+    border: 1px solid #96A697;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.primary-btn:hover {
+    background: #96A697;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(150, 166, 151, 0.3);
+}
+
+.primary-btn:disabled {
+    background: #C5C9C0;
+    border-color: #B8BCB4;
+    cursor: not-allowed;
+}
+
+/* 单个图片下载按钮样式 */
+.download-single-btn {
+    padding: 5px 10px;
+    background: #A5B5A6;
+    color: #FFFFFF;
+    border: 1px solid #96A697;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.download-single-btn:hover {
+    background: #96A697;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(150, 166, 151, 0.3);
+}
+
+/* 添加尺寸控制样式 */
+.size-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #E6E9E3;
+}
+
+.size-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.size-inputs input[type="number"] {
+    width: 80px;
+    padding: 0.3rem;
+    border: 1px solid #D1D5CE;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.size-inputs span {
+    color: #6e6e73;
+}
+
+.size-inputs label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.secondary-btn {
+    padding: 0.3rem 0.8rem;
+    background: #E6E9E3;
+    color: #4A4F41;
+    border: 1px solid #D1D5CE;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: #D8DCD4;
+}
+
+/* 裁剪对话框样式 */
+.crop-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.crop-container {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.crop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #E6E9E3;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #4A4F41;
+}
+
+.crop-content {
+    padding: 1rem;
+    height: auto;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.crop-controls {
+    padding: 1rem;
+    border-top: 1px solid #E6E9E3;
+}
+
+.crop-size-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.crop-size-inputs input[type="number"] {
+    width: 80px;
+    padding: 0.3rem;
+    border: 1px solid #D1D5CE;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.crop-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.apply-size-btn {
+    padding: 0.3rem 0.8rem;
+}
+
+/* 修改操作按钮容器样式 */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.crop-size-info {
+    color: #4A4F41;
+    font-size: 0.9rem;
+}
+
+.crop-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Cropper.js 相关样式覆盖 */
+.cropper-view-box,
+.cropper-face {
+    border-radius: 0;
+}
+
+.cropper-line,
+.cropper-point {
+    background-color: var(--primary-color);
+}
+
+.cropper-view-box {
+    outline: 2px solid var(--primary-color);
+} 
